@@ -2,26 +2,34 @@ package by.tr.mod2;
 
 public class Number11 {
     public static void main (String [] args){
-        double a,b;
-        a = 1;
+        int a,b;
+        a = 516704;
         b = 4301;
-        System.out.println("Цифры, входящие в состав первого числа:");
+        int x, y, a2,b2;
+        a2 = a;
+        b2 = b;
+        boolean flag = false;
         do {
-            System.out.println(a%10);
-            a = (a -a % 10) / 10;
+            x = a2 % 10;
+            a2 = (a2 -x) / 10;
+            b2 = b;
+            do {
+                y = b2 % 10;
+                b2 = (b2 -b2 % 10) / 10;
+                if (x == y)
+                {
+                    System.out.println("Общая Цифра = "+ x);
+                    flag = true;
+                }
+                // System.out.println(b/10);
+            }
+            while (b2 != 0);
         }
-        while (a/10 != 0);
-        System.out.println("Цифры, входящие в состав второго числа:");
-        do {
-            System.out.println( b % 10);
-            b = (b -b % 10) / 10;
-           // System.out.println(b/10);
+        while (a2 != 0);
+        if (flag == false){
+            System.out.println("Нет общих цифр");
         }
-        while (b/10 != 0);
-
-
     }
 
-
-
 }
+
